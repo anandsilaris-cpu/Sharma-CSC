@@ -3,88 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharma Computer - CSC Digital Seva</title>
+    <title>Sharma Computer - Sales | Service | Accessories</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; }
-        header { background: #004a99; color: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .logo-container { display: flex; align-items: center; }
-        .logo-icon { background: #ffcc00; color: #004a99; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; margin-right: 10px; border: 2px solid white; }
-        .logo-text { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; background-color: #f4f7f9; }
+        header { background: white; color: #004a99; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        nav a { color: white; text-decoration: none; margin-right: 15px; font-weight: 500; font-size: 14px; }
+        /* New Logo in Header */
+        .header-logo-container img { height: 60px; /* Adjust if needed */ width: auto; max-width: 100%; display: block; }
         
-        /* Social Icons */
         .social-links { display: flex; gap: 15px; }
-        .social-icon { color: white; font-size: 20px; transition: 0.3s; }
+        .social-icon { font-size: 24px; transition: 0.3s; }
         .fa-facebook { color: #1877F2; }
         .fa-instagram { color: #E4405F; }
-        .social-icon:hover { transform: scale(1.2); }
+        .social-icon:hover { transform: scale(1.2) rotate(5deg); }
 
-        .hero { background: linear-gradient(rgba(0,74,153,0.8), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 300px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        .section { padding: 40px 10%; text-align: center; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1593640495253-23196b27a05f?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; height: 350px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
-        .service-card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 4px solid #ffcc00; }
+        .section { padding: 50px 8%; text-align: center; }
+        .section-title { font-size: 2.2rem; color: #004a99; margin-bottom: 15px; text-transform: uppercase; font-weight: bold; }
+        .section-subtitle { font-size: 1.1rem; color: #666; margin-bottom: 40px; }
+
+        /* About Section Style */
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center; text-align: left; }
+        .about-text { font-size: 1.1rem; color: #444; }
+        .about-logo img { width: 100%; max-width: 350px; display: block; margin: 0 auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
         
-        .appointment-btn { background: #ffcc00; color: #004a99; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; display: inline-block; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        /* Full Services List Style */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 25px; }
+        .service-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 4px solid #ffcc00; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: #004a99; margin: 0; font-size: 18px; }
+        
+        .job-card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: left; max-width: 600px; margin: 20px auto; }
+        .job-item { padding: 10px 0; border-bottom: 1px dashed #eee; display: flex; align-items: center; }
+        .job-badge { background: #ff4d4d; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: bold; margin-right: 10px; }
+
+        .btn { padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; display: inline-block; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.3s; }
+        .btn-form { background: #ffcc00; color: #004a99; }
+        .btn-pay { background: #673ab7; color: white; margin-top: 25px; }
         
         .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        footer { background: #111; color: #999; text-align: center; padding: 20px; margin-top: 50px; }
+        footer { background: #111; color: #999; text-align: center; padding: 25px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <div class="logo-icon">SC</div>
-            <div class="logo-text">Sharma Computer</div>
-        </div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#jobs">Jobs</a>
-        </nav>
+        <a href="#home" class="header-logo-container">
+            <img src="image_0.png" alt="Sharma Computer Logo">
+        </a>
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="YOUR_FB_LINK" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="YOUR_INSTA_LINK" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Sharma Computer CSC Digital Seva</h1>
-        <p>Aapka Vishwas, Hamari Seva</p>
+    <section id="home" class="hero">
+        <h1>Welcome to Sharma Computer</h1>
+        <p>Aapki Jarurat, Hamara Solution | आपकी जरुरत, हमारा समाधान</p>
     </section>
 
-    <section id="services" class="section">
-        <h2>Our Services / हमारी सेवाएं</h2>
-        <div class="services-grid">
-            <div class="service-card"><h3>PAN Card</h3></div>
-            <div class="service-card"><h3>Voter ID</h3></div>
-            <div class="service-card"><h3>Resume</h3></div>
-            <div class="service-card"><h3>Tickets</h3></div>
+    <section id="about" class="section" style="background: white;">
+        <h2 class="section-title">About Us / हमारे बारे में</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Welcome to <b>Sharma Computer</b>, your trusted partner for all things digital. We specialize in the **sales of quality computer systems, reliable maintenance services, and a wide range of accessories** for all your electronic needs.</p>
+                <p>Humara lakshya aapko behtareen tech solutions pradan karna hai, chahe aap naya PC khareedna chahte hon, purane ko repair karwana hon, ya fir perfect accessories dhoondh rahe hon. Trust us for expertise, efficiency, and a commitment to your digital success.</p>
+            </div>
+            <div class="about-logo">
+                <img src="image_0.png" alt="Sharma Computer Brand Logo">
+            </div>
         </div>
     </section>
 
-    <section id="jobs" class="section" style="background: #fff0f0; border-left: 8px solid #ff4d4d;">
-        <h2 style="color: #d93025;">🔥 Latest Jobs</h2>
-        <p>SSC GD, Railway, UP Police Bharti 2026</p>
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services / हमारी सेवाएं</h2>
+        <p class="section-subtitle">Computers, Laptops, Accessories, Repairing and Digital Services</p>
+        <div class="services-grid">
+            <div class="service-card"><h3>PAN Card</h3><p>New & Correction</p></div>
+            <div class="service-card"><h3>Voter ID</h3><p>Reg. & Print</p></div>
+            <div class="service-card"><h3>Resume</h3><p>Professional CV</p></div>
+            <div class="service-card"><h3>Tickets</h3><p>Train, Bus, Flight</p></div>
+            <div class="service-card"><h3>E-Shram</h3><p>New Registration</p></div>
+            <div class="service-card"><h3>Ration Card</h3><p>Apply Online</p></div>
+            <div class="service-card"><h3>Adhar Print</h3><p>PVC Card Print</p></div>
+            <div class="service-card"><h3>Computer Sales</h3><p>New & Used PCs</p></div>
+        </div>
     </section>
 
-    <section class="section">
-        <h2>Contact & Payment</h2>
-        <a href="APNA_GOOGLE_FORM_LINK_YAHAN_DALO" class="appointment-btn">📝 Book Appointment</a>
-        <br><br>
-        <a href="upi://pay?pa=APNI_ID@okicici&pn=SharmaComputer" style="color: #673ab7; font-weight: bold; text-decoration: none;">
-            <i class="fas fa-wallet"></i> Pay via UPI (PhonePe/GPay)
-        </a>
+    <section id="jobs" class="section" style="background: #fff0f0; border-left: 10px solid #ff4d4d;">
+        <h2 style="color: #d93025;"><i class="fas fa-fire"></i> Latest Jobs / ताज़ा खबरें</h2>
+        <div class="job-card">
+            <div class="job-item"><span class="job-badge">NEW</span> <b>SSC GD Constable 2026</b></div>
+            <div class="job-item"><span class="job-badge">NEW</span> <b>Railway Recruitment RPF</b></div>
+            <div class="job-item"><span class="job-badge" style="background:#28a745">ADMIT CARD</span> <b>UP Police Exam Out</b></div>
+        </div>
+    </section>
+
+    <section id="appointment" class="section">
+        <h2>Book Appointment & Payment</h2>
+        <p>Niche diye button se form bharein ya fees pay karein:</p>
+        <a href="https://forms.gle/eLfY4FYnu6t59upy8" target="_blank" class="btn btn-form">📝 Click to Fill Form</a>
+        <br>
+        <a href="upi://pay?pa=APNI_ID@okicici&pn=SharmaComputer&cu=INR" class="btn btn-pay">💳 Pay via PhonePe / GPay</a>
     </section>
 
     <a href="https://wa.me/91YOUR_NUMBER" class="whatsapp-float"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
 
     <footer>
-        <p>&copy; 2026 Sharma Computer CSC Center</p>
+        <p><b>Sharma Computer CSC Digital Center</b></p>
+        <p>&copy; 2026 | Sales | Service | Accessories</p>
     </footer>
 
 </body>
