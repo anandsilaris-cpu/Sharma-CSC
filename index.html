@@ -11,11 +11,11 @@
         /* Global Styles */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; background-color: #f0f4f8; }
         
-        /* Header with Gradient Background */
+        /* Header */
         header { 
             background: linear-gradient(135deg, #003366 0%, #001a33 100%); 
             color: white; 
-            padding: 15px 8%; 
+            padding: 20px 8%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -26,22 +26,21 @@
             border-bottom: 4px solid #ffcc00;
         }
         
-        .brand-name { text-align: left; }
-        .brand-name h1 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; color: #ffcc00; text-transform: uppercase; }
-        .brand-name p { margin: 0; font-size: 0.8rem; opacity: 0.8; letter-spacing: 2px; }
+        .brand-name h1 { margin: 0; font-size: 1.8rem; color: #ffcc00; text-transform: uppercase; }
+        .brand-name p { margin: 0; font-size: 0.9rem; opacity: 0.9; letter-spacing: 2px; }
 
         .social-links { display: flex; gap: 20px; }
-        .social-icon { font-size: 24px; transition: 0.3s; text-decoration: none; }
+        .social-icon { font-size: 26px; transition: 0.3s; text-decoration: none; }
         .fa-facebook { color: #1877F2; }
         .fa-instagram { color: #E4405F; }
         .social-icon:hover { transform: scale(1.2); }
 
-        /* Hero Section */
+        /* Hero */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80'); 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover; 
             background-position: center; 
-            height: 350px; 
+            height: 250px; 
             color: white; 
             display: flex; 
             flex-direction: column; 
@@ -50,43 +49,54 @@
             text-align: center; 
             padding: 0 20px; 
         }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; background: rgba(255, 204, 0, 0.2); padding: 5px 15px; border-radius: 5px; }
 
-        .section { padding: 60px 10%; text-align: center; }
-        .section-title { font-size: 2.2rem; color: #003366; margin-bottom: 10px; font-weight: bold; position: relative; display: inline-block; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: #ffcc00; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section { padding: 50px 10%; text-align: center; }
+        .section-title { font-size: 2rem; color: #003366; margin-bottom: 30px; font-weight: bold; text-transform: uppercase; }
 
-        /* About Us */
-        .about-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 30px; border-left: 8px solid #003366; text-align: left; }
-        .about-box p { font-size: 1.1rem; color: #555; margin-bottom: 15px; }
+        /* Clickable Service Cards */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        
+        .service-link { text-decoration: none; color: inherit; display: block; }
+        
+        .service-card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+            transition: 0.3s; 
+            border-top: 5px solid #003366; 
+            height: 100%;
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            border-top-color: #ffcc00; 
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            background-color: #fffef0;
+        }
 
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
-        .service-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; border-bottom: 4px solid #eee; }
-        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #ffcc00; }
-        .service-card i { font-size: 40px; color: #003366; margin-bottom: 15px; }
-        .service-card h3 { margin: 10px 0; font-size: 1.2rem; color: #003366; }
+        .service-card i { font-size: 35px; color: #003366; margin-bottom: 15px; }
+        .service-card h3 { margin: 10px 0; font-size: 1.1rem; color: #003366; font-weight: bold; }
+        .service-card p { font-size: 0.85rem; color: #666; }
 
         /* Job Updates */
-        .job-section { background: #fff5f5; border: 2px solid #ff4d4d; border-radius: 15px; padding: 30px; margin-top: 30px; position: relative; overflow: hidden; }
-        .job-section::before { content: 'NEW'; position: absolute; top: 10px; right: -30px; background: #ff4d4d; color: white; padding: 5px 40px; transform: rotate(45deg); font-size: 12px; font-weight: bold; }
-        .job-list { list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 0 auto; }
-        .job-list li { padding: 12px 0; border-bottom: 1px dashed #ffb3b3; font-weight: bold; color: #d93025; }
-        .job-list li i { margin-right: 10px; }
+        .job-card { background: #fff5f5; border: 2px dashed #ff4d4d; border-radius: 15px; padding: 20px; max-width: 600px; margin: 0 auto; text-align: left; }
+        .job-item { padding: 8px 0; border-bottom: 1px solid #ffcccc; font-weight: bold; color: #d93025; }
 
-        /* Buttons */
-        .btn-container { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .btn { padding: 18px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .btn-form { background: #ffcc00; color: #003366; }
-        .btn-pay { background: #673ab7; color: white; }
-        .btn:hover { transform: scale(1.05); opacity: 0.9; }
-
-        /* WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        /* Payment Button */
+        .btn-pay { 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            display: inline-block; 
+            background: #003366; 
+            color: white; 
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
         footer { background: #001a33; color: #7a99b8; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        footer b { color: white; }
     </style>
 </head>
 <body>
@@ -103,60 +113,58 @@
     </header>
 
     <section class="hero">
-        <h2>Digital Seva & Tech Solutions</h2>
-        <p>Aapki Har Tech Samasya Ka Samadhan</p>
+        <h2>Sabhi Online Form & Tech Solutions</h2>
+        <p>Service par click karein aur form bharein</p>
     </section>
 
     <section class="section">
-        <h2 class="section-title">About Our Shop</h2>
-        <div class="about-box">
-            <p><b>Sharma Computer</b> aapka bharosemand partner hai computer sales aur service mein. Hum naye aur purane laptops/computers bechte hain aur unki repairing bhi karte hain.</p>
-            <p>Humari shop par aapko har tarah ki computer accessories (Mouse, Keyboard, WiFi Dongle, etc.) milengi. Iske saath hi hum sabhi CSC online services jaise PAN Card, Voter ID, aur Online Form bharna bhi behatreen tarike se karte hain.</p>
-        </div>
-    </section>
-
-    <section class="section" style="background: #fdfdfd;">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">Our Services / हमारी सेवाएं</h2>
+        <p style="margin-bottom: 30px; color: #666;">(Niche kisi bhi service par click karke form bharein)</p>
+        
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-laptop"></i><h3>Dl & LL</h3><p>New & Used Systems</p></div>
-            <div class="service-card"><i class="fas fa-tools"></i><h3>E-Shram card</h3><p>Hardware & Software</p></div>
-            <div class="service-card"><i class="fas fa-mouse"></i><h3>Bio & Resume</h3><p>Quality Products</p></div>
-            <div class="service-card"><i class="fas fa-id-card"></i><h3>PAN Card</h3><p>New & Correction</p></div>
-            <div class="service-card"><i class="fas fa-user-check"></i><h3>Voter ID</h3><p>Online Apply</p></div>
-            <div class="service-card"><i class="fas fa-print"></i><h3>Aadhar Print</h3><p>PVC Card Service</p></div>
-            <div class="service-card"><i class="fas fa-train"></i><h3>Ticket Booking</h3><p>Train, Bus, Flight</p></div>
-            <div class="service-card"><i class="fas fa-file-invoice"></i><h3>Online Form</h3><p>Sarkari Naukri Form</p></div>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-id-card"></i><h3>PAN Card</h3><p>New & Correction</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-user-check"></i><h3>Voter ID</h3><p>Online Apply</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-file-pdf"></i><h3>Resume</h3><p>Professional CV</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-train"></i><h3>Tickets</h3><p>Bus & Train</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-address-card"></i><h3>E-Shram</h3><p>Registration</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-clipboard-list"></i><h3>Ration Card</h3><p>Apply Online</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-laptop"></i><h3>PC Sales</h3><p>New/Used PC</p></div>
+            </a>
+            <a href="https://forms.gle/S97BuFUgBqL4K6Wo6" target="_blank" class="service-link">
+                <div class="service-card"><i class="fas fa-tools"></i><h3>Repairing</h3><p>Hardware Fix</p></div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;">
+        <h2 class="section-title">Latest Jobs</h2>
+        <div class="job-card">
+            <div class="job-item">🔥 SSC GD Constable 2026</div>
+            <div class="job-item">🔥 Railway RPF Admit Card</div>
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title">Latest Job Updates</h2>
-        <div class="job-section">
-            <ul class="job-list">
-                <li><i class="fas fa-bullhorn"></i> SSC GD Constable 2026 - Apply Now</li>
-                <li><i class="fas fa-bullhorn"></i> Railway RPF New Vacancy Notification</li>
-                <li><i class="fas fa-bullhorn"></i> UP Police Exam City & Date Status</li>
-            </ul>
-        </div>
+        <h2 class="section-title">Quick Payment</h2>
+        <a href="upi://pay?pa=APNI_ID@okicici&pn=SharmaComputer" class="btn btn-pay">💳 Pay via PhonePe/GPay</a>
     </section>
-
-    <section class="section">
-        <h2 class="section-title">Contact & Payment</h2>
-        <p>Niche diye gaye buttons ka istemal karein:</p>
-        <div class="btn-container">
-            <a href="https://forms.gle/ZwAZKtCqcHpCh8iG9" target="_blank" class="btn btn-form">📝 Fill Appointment Form</a>
-            <a href="upi://pay?pa=APNI_ID@okicici&pn=SharmaComputer" class="btn btn-pay">💳 Pay via PhonePe/GPay</a>
-        </div>
-    </section>
-
-    <a href="https://wa.me/91YOUR_NUMBER" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <footer>
         <p><b>Sharma Computer CSC Digital Center</b></p>
-        <p>Sales | Service | Accessories</p>
-        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Sharma Computer. All Rights Reserved.</p>
+        <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
 
 </body>
